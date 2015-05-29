@@ -1,5 +1,7 @@
 package com.shapes.manager;
 
+import java.util.List;
+
 /**
  * Class Rectangle extending Shape class
  *
@@ -18,21 +20,45 @@ public class Rectangle extends Shape {
      */
     private String fill;
 
+    /**
+     * Value of A length in AxB rectangle
+     */
+    private int height;
 
     /**
-     * Empty constructor to initialize parameters to default
+     * Value of B length in AxA square
      */
-    public Rectangle(){
+    private int width;
+
+
+    /**
+     * constructor to initialize parameters to default
+     */
+    public Rectangle(String name, List<Coordinate> coordinateList){
+        this.coordinateList = coordinateList;
+        this.shapeName= name;
         shapeIsFilled=false;
         fill="none";
+        this.type="Rectangle";
     }
 
-    /**
-     * Constructor to initialize parameters to inserted values
-     */
-    public Rectangle(Boolean shapeIsFilled, String fill){
-        this.shapeIsFilled=shapeIsFilled;
-        this.fill=fill;
+    public Boolean getShapeIsFilled() {
+        return shapeIsFilled;
     }
 
+    public void setShapeIsFilled(Boolean shapeIsFilled) {
+        this.shapeIsFilled = shapeIsFilled;
+    }
+
+    public String getFill() {
+        return fill;
+    }
+
+    public void setFill(String fill) {
+        this.fill = fill;
+    }
+
+    public void print(){
+        System.out.print("IsFilled: " + shapeIsFilled + "   " + "Fill: " + fill);
+    }
 }

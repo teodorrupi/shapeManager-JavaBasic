@@ -1,5 +1,7 @@
 package com.shapes.manager;
 
+import java.util.List;
+
 /**
  * Abstract Class Shape
  *
@@ -8,4 +10,12 @@ package com.shapes.manager;
  * to be place on the Area2D class.
  */
 public abstract class Shape {
+
+    public List<Coordinate> coordinateList;
+    public String shapeName;
+    public String type;
+
+    public void print(){
+        System.out.print("This is a shape");
+    }
 }

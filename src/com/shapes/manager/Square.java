@@ -1,5 +1,7 @@
 package com.shapes.manager;
 
+import java.util.List;
+
 /**
  * Class Square extending Shape class
  *
@@ -18,6 +20,22 @@ public class Square extends Shape {
      */
     private String fill;
 
+    /**
+     * Value of A length in AxA square
+     */
+    private int length;
+
+    /**
+     * constructor to initialize parameters to default
+     */
+    public Square(String name, List<Coordinate> coordinateList){
+        this.coordinateList = coordinateList;
+        this.shapeName= name;
+        shapeIsFilled=false;
+        fill="none";
+        this.type="Square";
+    }
+
 
     /**
      * Empty constructor to initialize parameters to default
@@ -33,5 +51,25 @@ public class Square extends Shape {
     public Square(Boolean shapeIsFilled, String fill){
         this.shapeIsFilled=shapeIsFilled;
         this.fill=fill;
+    }
+
+    public void print(){
+        System.out.print("IsFilled: " + shapeIsFilled + "   " + "Fill: " + fill);
+    }
+
+    public Boolean getShapeIsFilled() {
+        return shapeIsFilled;
+    }
+
+    public void setShapeIsFilled(Boolean shapeIsFilled) {
+        this.shapeIsFilled = shapeIsFilled;
+    }
+
+    public String getFill() {
+        return fill;
+    }
+
+    public void setFill(String fill) {
+        this.fill = fill;
     }
 }
